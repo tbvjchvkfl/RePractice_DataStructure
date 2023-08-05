@@ -1,4 +1,5 @@
 #include "Stack.h"
+#include "LinkedList_Stack.h"
 
 using namespace std;
 
@@ -31,6 +32,10 @@ void Print(Stack& stack)
 		cout << stack.arr[i] << endl;
 	}
 	cout << "-----------------" << endl;
+}
+
+void RemoveAll(Stack& stack)
+{
 }
 
 void CommandTuto(Stack& stack)
