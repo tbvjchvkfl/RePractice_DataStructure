@@ -5,11 +5,11 @@ using namespace std;
 
 void Push(Stack& stack, int value)
 {
-	Linked_Stack* pLinkedStack = new Linked_Stack{};
-	pLinkedStack->value = value;
+	Stack_Element* pStack_Element = new Stack_Element{};
+	pStack_Element->value = value;
 	
-	pLinkedStack->pNext = stack.pFocus;
-	stack.pFocus = pLinkedStack;
+	pStack_Element->pNext = stack.pFocus;
+	stack.pFocus = pStack_Element;
 	stack.count++;
 }
 
@@ -21,14 +21,14 @@ void Pop(Stack& stack)
 		return;
 	}
 	
-	Linked_Stack* pPrev = stack.pFocus;
+	Stack_Element* pPrev = stack.pFocus;
 	stack.pFocus = pPrev->pNext;
 	stack.count--;
 	delete pPrev;
 }
 void Print(Stack& stack)
 {
-	Linked_Stack* pStack = stack.pFocus;
+	Stack_Element* pStack = stack.pFocus;
 
 	while (pStack != nullptr)
 	{
@@ -38,14 +38,14 @@ void Print(Stack& stack)
 }
 void RemoveAll(Stack& stack)
 {
-	Linked_Stack* pLinkedStack = stack.pFocus;
-	Linked_Stack* pNext{};
+	Stack_Element* pStack_Element = stack.pFocus;
+	Stack_Element* pNext{};
 
-	while (pLinkedStack)
+	while (pStack_Element)
 	{
-		pNext = pLinkedStack->pNext;
-		delete pLinkedStack;
-		pLinkedStack = pNext;
+		pNext = pStack_Element->pNext;
+		delete pStack_Element;
+		pStack_Element = pNext;
 	}
 
 	stack.count = 0;

@@ -1,17 +1,17 @@
 #pragma once
 
-struct Linked_Stack
+struct Stack_Element
 {
 	int value{};
 
-	Linked_Stack* pNext{};
+	Stack_Element* pNext{};
 };
 
 struct Stack
 {
 	int count{};
 
-	Linked_Stack* pFocus{};
+	Stack_Element* pFocus{};
 };
 
 void Push(Stack& stack, int value);
