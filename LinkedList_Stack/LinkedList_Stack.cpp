@@ -7,7 +7,6 @@ void Push(Stack& stack, int value)
 {
 	Stack_Element* pStack_Element = new Stack_Element{};
 	pStack_Element->value = value;
-	
 	pStack_Element->pNext = stack.pFocus;
 	stack.pFocus = pStack_Element;
 	stack.count++;
